@@ -1,20 +1,42 @@
-//array destucturing
-const arr=[1,2,3,4,5]
+const arr = [1, 2, 3, 4, 5];
 
-const [a,b]=arr
-console.log(a,b)
+// ✅ Basic destructuring
+const [a, b] = arr; 
+console.log(a, b); // 1 2
 
-const [, ,c]=arr;
+// ✅ Skipping elements
+const [ , , c] = arr;
+console.log(c); // 3
 
-console.log(c)
+// ✅ Default values
+const [x, y, z, p = 10] = [7, 8];
+console.log(p); // 10
 
-const [x,y,z=10,l,m]=arr
+// ✅ Rest operator
+const [first, ...rest] = arr;
+console.log(first); // 1
+console.log(rest);  // [2, 3, 4, 5]
 
-console.log(x+" "+z)
 
-const [first,...rest]=arr
+const user={
+    namee:"punith",
+    age:20,
+    location:"nlg",
+    contact:{
+        email:"apunithnlg19@gmail.com"
+    }
+}
+const {namee,age}=user
 
-console.log(first)
+console.log(age)
 
-console.log(rest)
+console.log(namee)
+
+console.log(user.contact.email)
+
+const {location:country}=user
+console.log(namee,country)
+
+const { gender = "Not specified" } = user;
+console.log(gender); 
 
